@@ -45,10 +45,10 @@ class MyPriorityQueue
     MyPriorityQueue(Node<T>* front, Node<T>* rear): front (front), rear (rear)
     {}
  
-    void push (Node<T> item)
+    void push (Node<T>* item)
     {
-        rear->next = &item;
-        rear = &item;
+        rear->next = item;
+        rear = item;
         rear->next = NULL;
     }
 
@@ -107,7 +107,7 @@ int main ()
     std::cout << queue;
     std::cout << queue.size() << std::endl;
 
-    queue.push(node5);
+    queue.push(&node5);
 
     std::cout << node5.data << std::endl;
 
