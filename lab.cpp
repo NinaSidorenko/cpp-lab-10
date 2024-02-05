@@ -6,6 +6,12 @@ struct Node {
     Node* next;
     unsigned priority;
 
+    Node() : data(0), next(NULL), priority(0)
+    {}
+
+    Node(const Node<T>& o) : data(o.data), next(o.next), priority(o.priority)
+    {}
+
     Node(T data, unsigned priority) : data(data), next(NULL), priority(priority)
     {}
 
